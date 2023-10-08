@@ -1,49 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature in Language Model</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        :root {
+            --primary-bg-color: #f8f8f8;
+            --secondary-bg-color: rgba(173, 216, 230, 0.6);
+            --border-color: rgb(192, 12, 12);
+            --primary-text-color: #333;
+            --primary-font-family: 'Arial', sans-serif;
+            --secondary-font-family: 'Georgia', serif;
+            --primary-font-size: 2em;
+            --secondary-font-size: 1.5em;
+            --label-font-size: 1.2em;
+            --range-width: 100%;
+            --max-content-width: 1000px;
+            --content-width: 80%;
+            --page-padding: 20px;
+            --element-margin-bottom: 20px;
+        }
+
+        /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f8f8f8;
+            font-family: var(--primary-font-family);
+            background-color: var(--primary-bg-color);
+            color: var(--primary-text-color);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             margin: 0;
+            padding: var(--page-padding);
         }
-        canvas {
-            width: 80% !important;
-            max-width: 800px;
-            height: 600px !important; */
 
+        main {
+            width: var(--content-width);
+            max-width: var(--max-content-width);
+        }
 
+        /* Heading and Paragraph Styles */
+        h1,
+        p {
+            font-size: var(--primary-font-size);
+            margin-bottom: var(--element-margin-bottom);
         }
-        label, span {
-            font-size: 1.2em;
-            margin-bottom: 20px;
+
+        /* Label and Span Styles */
+        label,
+        span {
+            display: block;
+            font-size: var(--secondary-font-size);
+            margin-bottom: var(--element-margin-bottom);
         }
+
+        /* Input Styles */
         input[type=range] {
-            width: 80%;
-            max-width: 400px;
+            width: var(--range-width);
         }
+
+        /* Label Styles */
+        label {
+            font-size: var(--label-font-size);
+        }
+
+        /* Button and Input Enhancements */
+        input[type=range] {
+            cursor: pointer;
+            /* Indicates an interactive element */
+            transition: transform 0.2s;
+            /* Smooth transition */
+        }
+
+        input[type=range]:hover,
+        input[type=range]:focus {
+            transform: scale(1.05);
+            /* Slight zoom in on hover/focus */
+        }
+
+        /* Chart Enhancements */
+        #chart {
+            transition: opacity 0.5s;
+            /* Smooth transition for the chart */
+        }
+
+        /* Text Enhancements */
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            /* All uppercase letters for the title */
+            letter-spacing: 2px;
+            /* Spacing between letters */
+            font-weight: bold;
+        }
+
+        p {
+            text-align: center;
+            color: var(--secondary-bg-color);
+        }
+
+        /* General Enhancements */
+        body {
+            overflow-x: hidden;
+            /* Prevent horizontal scrolling */
+            overflow-y: auto;
+            /* Enable vertical scrolling if needed */
+        }
+        .question-text {
+            color: #960000; /* Example color: Teal */
+        }
+        
+        
     </style>
 </head>
+
 <body>
-    <h1>Temperature in Language Model</h1>
-    <p>A bird that catches the small birds is called ____</p>
-    <label for="temperature">Temperature: </label>
-    <input type="range" id="temperature" min="0.01" max="10" step="0.01" value="1">
-    <span id="tempValue">1</span>
-    <canvas id="chart"></canvas>
+    <main>
+        <p class="question-text">A bird that catches the small birds is called ____</p>
+
+        <label for="temperature">Temperature:
+            <input type="range" id="temperature" min="0.01" max="10" step="0.01" value="1">
+            <span id="tempValue">1</span>
+        </label>
+        <canvas id="chart"></canvas>
+    </main>
 
     <script>
-        document.getElementById('temperature').addEventListener('input', function(e){
+        // Add Event Listener for the temperature input
+        document.getElementById('temperature').addEventListener('input', function (e) {
             document.getElementById('tempValue').innerText = e.target.value;
             updateChart(e.target.value);
         });
@@ -59,8 +147,8 @@
                 datasets: [{
                     label: 'Probability',
                     data: initialProbabilities,
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(173, 216, 230, 0.6)',
+                    borderColor: 'rgba(173, 216, 230, 1)',
                     borderWidth: 1
                 }]
             },
@@ -68,23 +156,63 @@
                 scales: {
                     y: {
                         beginAtZero: true,
-                        max: .6
+                        max: 1,
+                        ticks: {
+                            fontSize: 16
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            fontSize: 24  // Increased font size for x-axis labels
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            fontSize: 20  // Adjusted font size for the legend
+                        }
                     }
                 }
             }
         });
 
+
+
+        // Update the chart data based on the temperature
         function updateChart(temperature) {
             const probabilities = softmax(initialProbabilities, temperature);
             chart.data.datasets[0].data = probabilities;
             chart.update();
         }
 
+        // Softmax function to recalculate the probabilities
         function softmax(arr, temperature) {
-            const powerArr = arr.map(d => Math.pow(d, 1/temperature));
-            const sum = powerArr.reduce((a,b) => a + b, 0);
+            const powerArr = arr.map(d => Math.pow(d, 1 / temperature));
+            const sum = powerArr.reduce((a, b) => a + b, 0);
             return powerArr.map(d => d / sum);
         }
+        // Using window.onload to ensure all elements are fully loaded before applying any JS
+        window.onload = () => {
+            // Existing JavaScript code...
+
+            // Smooth chart update
+            chart.options.animation = {
+                duration: 1000, // Smooth transition of 1s for updating the chart
+                easing: 'easeInOutQuart', // Quartic easing for smooth start and end
+            };
+
+            // Provide additional user feedback: Display temperature value on range hover
+            document.getElementById('temperature').addEventListener('mousemove', function (e) {
+                document.getElementById('tempValue').innerText = e.target.value;
+            });
+
+            // Initially hide the chart and display it with a fade-in effect
+            document.getElementById('chart').style.opacity = 0;
+            setTimeout(() => document.getElementById('chart').style.opacity = 1, 100);
+        };
+
     </script>
 </body>
+
 </html>
