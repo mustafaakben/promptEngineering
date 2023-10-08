@@ -18,20 +18,22 @@ Where:
 
 The model is trained to maximize the likelihood of a word given its preceding words using the `softmax` function:
 
-$P(w_i | w_1, w_2, ..., w_{i-1}) = \frac{\exp(s(w_i))}{\sum_{j} \exp(s(w_j))}$
+```math
+P(w_i | w_1, w_2, ..., w_{i-1}) = \frac{\exp(s(w_i))}{\sum_{j} \exp(s(w_j))}
+```
 Where:
 - $s(w_i)$  is the score of word $w_i$ computed by the model.
 - The denominator is a normalizing factor ensuring that the probabilities sum to 1 over all possible words $w_j$ in the vocabulary.
 
 ****
-### 2. Definition of Transformers 
 
+### 2. Definition of Transformers 
 #### a. Attention Mechanism
 The attention mechanism in Transformers allows the model to focus on different words for a given input. The scaled dot-product attention is defined as:
 
-$$
+```math
  \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V 
-$$
+```
 Where: 
 - $Q$ , $K$, and $V$ are the query, key, and value matrices, respectively. 
 - $d$ is the dimension of the key.
@@ -39,9 +41,9 @@ Where:
 #### b. Multi-Head Attention
 Multi-head attention allows the model to focus on different words in parallel for a single encoder/decoder step. It is defined as:
 
-$$
+```math
 \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \text{head}_2, ..., \text{head}_h)W^O
-$$
+```
 Where each head is computed as: 
 
 $$ 
