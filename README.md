@@ -1,16 +1,15 @@
 # ChatGPT & Prompt Engineering 
-
 **Mustafa Akben, PhD.**  
 [makben@elon.edu](mailto:makben@elon.edu)
 
 *** 
-# Section 1: Understanding Large Language Model
+# Section 1: Understand Large Language Model
 ### 1. Definition of Large Language Model
 A large language model like GPT-3.5 or GPT-4 utilizes a transformer architecture to predict the next word in a sequence by maximizing the probability of a word sequence:
 
-
-$P(w_1, w_2, ..., w_N) = \prod_{i=1}^{N} P(w_i | w_1, w_2, ..., w_{i-1})$
-
+```math
+P(w_1, w_2, ..., w_N) = \prod_{i=1}^{N} P(w_i | w_1, w_2, ..., w_{i-1})
+```
 
 Where:
 - $( w_1, w_2, ..., w_N )$ represent the words in the sequence.
@@ -21,6 +20,7 @@ The model is trained to maximize the likelihood of a word given its preceding wo
 ```math
 P(w_i | w_1, w_2, ..., w_{i-1}) = \frac{\exp(s(w_i))}{\sum_{j} \exp(s(w_j))}
 ```
+
 Where:
 - $s(w_i)$  is the score of word $w_i$ computed by the model.
 - The denominator is a normalizing factor ensuring that the probabilities sum to 1 over all possible words $w_j$ in the vocabulary.
@@ -46,22 +46,22 @@ Multi-head attention allows the model to focus on different words in parallel fo
 ```
 Where each head is computed as: 
 
-$$ 
+```math
 \text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V) 
-$$
+```
 And: 
-- $W_i^Q$, $W_i^K$, $W_i^V$, and $W^O$ are parameter matrices. 
+- $W_i^Q$, $W_i^K$, $W_i^V$, and $W^O$ are learnable parameter matrices. 
 - $h$ is the number of heads.
 
 #### c. Positional Encoding
 Since the transformer does not have any sense of order of the input sequence, positional encoding is added to give the model information about the position of a word in a sentence. The positional encoding is added to the input embedding:
 
-$$
+```math
 PE_{(pos, 2i)} = \sin\left(\frac{pos}{10000^{\frac{2i}{d}}}\right)
-$$
-$$
+```
+```math
 PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{\frac{2i}{d}}}\right) 
-$$
+```
 Where: 
 - $pos$ is the position of the word in the sequence. 
 - $i$ is the dimension. 
@@ -70,15 +70,16 @@ Where:
 #### d. Feedforward Neural Network
 Each transformer block contains a feedforward neural network that is applied independently to each position. The feedforward neural network typically consists of two linear transformations with a ReLU activation in between:
 
-$$
+```math
 FFN(x) = \text{max}(0, xW_1 + b_1)W_2 + b_2
-$$
+```
 Where: 
 - $W_1$, $W_2$, $b_1$, and $b_2$ are parameter matrices and bias vectors.
 
 \
 \
 **Here is the model picture**
+
 ![d2l.ai/_images/transformer.svg](https://d2l.ai/_images/transformer.svg)
 
 
@@ -96,10 +97,13 @@ Can you list three impacts of generative AI on cats’ relationships with each o
 
 A prompt contains any of the following elements:
 
-**Instruction :** a specific task or instruction you want the model to perform
-**Context :** external information or additional context that can steer the model to better responses
-**Input Data (Examples) :** the input or question that we are interested to find a response for
-**Output Indicator :** the type or format of the output.
+-**Instruction :** a specific task or instruction you want the model to perform
+
+-**Context :** external information or additional context that can steer the model to better responses
+
+-**Input Data (Examples) :** the input or question that we are interested to find a response for
+
+-**Output Indicator :** the type or format of the output.
 
 **Example Prompt**
 ```
@@ -124,7 +128,7 @@ Title: Love of My Life
 Use it for simple task
 
 ```
-Classify into three categories: neutral, negative or positive.
+Classify the following text into three categories: neutral, negative or positive.
 
 Text:
 
@@ -141,7 +145,7 @@ Use it for complex problem
 **A Bad Prompt**
 ```
 Please decipher the following writing:
-hwt xh epxcixcv p exrijgt.  >>>
+hwt xh epxcixcv p exrijgt.  >>>
 ```
 
 In the second stage, add the following content to improve accuracy.
@@ -151,18 +155,18 @@ In the second stage, add the following content to improve accuracy.
 ```
 Please use the following context to decipher the text:  
   
-iwt hjc xh hwxcxcv qgxvwian.  >>>  The sun is shining brightly.
-rpih pgt vgtpi etih.  >>>  Cats are great pets.
-x tcydn gtpsxcv qddzh.  >>>  I enjoy reading books.
-hwt eapnh iwt expcd qtpjixujaan.  >>>  She plays the piano beautifully.
-wt pit pc peeat udg ajcrw.  >>>  He ate an apple for lunch.
-wt xh epxcixcv  >>>  He is painting
-p exrijgt dc iwt lpaa.  >>>  A picture on the wall.
-lt lpazts id iwt epgz.  >>>  We walked to the park.
-xi xh p hjccn spn.  >>>  It is a sunny day.
-iwxh xh bn upkdgxit hwxgi.  >>>  This is my favorite shirt.
-iwtn pgt eapnxcv hdrrtg.  >>>  They are playing soccer.
-hwt xh epxcixcv p exrijgt.  >>>
+iwt hjc xh hwxcxcv qgxvwian.  >>>  The sun is shining brightly.
+rpih pgt vgtpi etih.  >>>  Cats are great pets.
+x tcydn gtpsxcv qddzh.  >>>  I enjoy reading books.
+hwt eapnh iwt expcd qtpjixujaan.  >>>  She plays the piano beautifully.
+wt pit pc peeat udg ajcrw.  >>>  He ate an apple for lunch.
+wt xh epxcixcv  >>>  He is painting
+p exrijgt dc iwt lpaa.  >>>  A picture on the wall.
+lt lpazts id iwt epgz.  >>>  We walked to the park.
+xi xh p hjccn spn.  >>>  It is a sunny day.
+iwxh xh bn upkdgxit hwxgi.  >>>  This is my favorite shirt.
+iwtn pgt eapnxcv hdrrtg.  >>>  They are playing soccer.
+hwt xh epxcixcv p exrijgt.  >>>
 
 ```
 
@@ -171,9 +175,10 @@ hwt xh epxcixcv p exrijgt.  >>>
 
 Tell the machine to **show the explicit reasoning steps** to increase accuracy
 \
+\
 **A Bad Prompt**
 ```
-Just only write the answer to the questions with a number such as "11" or "55".
+Just only write the answer to the questions with a number.
 
 
 Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3 tennis balls. How many tennis balls does he have now?
@@ -264,73 +269,73 @@ Finally, write the JavaScript code. To write the code, please use the example AP
 
 curl https://api.openai.com/v1/chat/completions \
 
-  -H "Content-Type: application/json" \
+  -H "Content-Type: application/json" \
 
-  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
 
-  -d '{
+  -d '{
 
-    "model": "gpt-3.5-turbo-16k",
+    "model": "gpt-3.5-turbo-16k",
 
-    "messages": [
+    "messages": [
 
-      {
+      {
 
-        "role": "system",
+        "role": "system",
 
-        "content": "You are a helpful assistant."
+        "content": "You are a helpful assistant."
 
-      },
+      },
 
-      {
+      {
 
-        "role": "user",
+        "role": "user",
 
-        "content": "Hello!"
+        "content": "Hello!"
 
-      }
+      }
 
-    ]
+    ]
 
-  }'
+  }'
 
 RESPONSE
 
 {
 
-  "id": "chatcmpl-123",
+  "id": "chatcmpl-123",
 
-  "object": "chat.completion",
+  "object": "chat.completion",
 
-  "created": 1677652288,
+  "created": 1677652288,
 
-  "model": "gpt-3.5-turbo-0613",
+  "model": "gpt-3.5-turbo-0613",
 
-  "choices": [{
+  "choices": [{
 
-    "index": 0,
+    "index": 0,
 
-    "message": {
+    "message": {
 
-      "role": "assistant",
+      "role": "assistant",
 
-      "content": "\n\nHello there, how may I assist you today?",
+      "content": "\n\nHello there, how may I assist you today?",
 
-    },
+    },
 
-    "finish_reason": "stop"
+    "finish_reason": "stop"
 
-  }],
+  }],
 
-  "usage": {
+  "usage": {
 
-    "prompt_tokens": 9,
+    "prompt_tokens": 9,
 
-    "completion_tokens": 12,
+    "completion_tokens": 12,
 
-    "total_tokens": 21
+    "total_tokens": 21
 
-  }
+  }
 
 }
 
@@ -343,4 +348,3 @@ Let's go step by step and first write the actions that you will take and then ta
 ```
 Let’s make the style of the website with CSS. CSS should be funky and vibrant, showing the spirit of our website.
 ```
-"# promptEngineering" 
