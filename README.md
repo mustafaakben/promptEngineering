@@ -18,9 +18,7 @@ Where:
 
 The model is trained to maximize the likelihood of a word given its preceding words using the `softmax` function:
 
-$$ 
-P(w_i | w_1, w_2, ..., w_{i-1}) = \frac{\exp(s(w_i))}{\sum_{j} \exp(s(w_j))}
-$$
+$P(w_i | w_1, w_2, ..., w_{i-1}) = \frac{\exp(s(w_i))}{\sum_{j} \exp(s(w_j))}$
 Where:
 - $s(w_i)$  is the score of word $w_i$ computed by the model.
 - The denominator is a normalizing factor ensuring that the probabilities sum to 1 over all possible words $w_j$ in the vocabulary.
