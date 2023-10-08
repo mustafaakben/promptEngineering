@@ -1,0 +1,84 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #ffedea;
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f8b400;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 5px 0;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+h2 {
+    color: #e85d04;
+    font-size: 1.8em;
+    border-bottom: 2px dashed #f8b400;
+    padding-bottom: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #e85d04;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #e85d04;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #d84a03;
+}
+
+#output-section {
+    margin-top: 20px;
+}
+
+#meal-ideas {
+    background-color: #fff4e3;
+    border-radius: 8px;
+    padding: 20px;
+    display: none;  /* Initially hidden until meals are generated */
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

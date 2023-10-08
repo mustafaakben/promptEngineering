@@ -1,11 +1,3 @@
----
-author: Akben, Mustafa
-tags:
-  - GenerativeAI
-  - PromptEngineering
----
----
-
 # ChatGPT & Prompt Engineering 
 
 **Mustafa Akben, PhD.**  

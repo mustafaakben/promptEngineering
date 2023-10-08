@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Meal Generator</title>
+	
+	<style> 
+		body {
+			font-family: 'Arial', sans-serif;
+			background-color: #FFEBEE;
+			padding: 2% 10%;
+			text-align: center;
+		}
+
+		h1 {
+			color: #FF4081;
+			font-size: 2.5em;
+			border-bottom: 4px dashed #FFC107;
+			padding-bottom: 10px;
+			margin-bottom: 20px;
+		}
+
+		textarea {
+			width: 100%;
+			height: 100px;
+			padding: 10px;
+			font-size: 1.2em;
+			border: 3px solid #FF4081;
+			border-radius: 10px;
+			background-color: #FFF3E0;
+			color: #FF4081;
+			resize: none;
+		}
+
+		button {
+			margin-top: 20px;
+			padding: 10px 20px;
+			font-size: 1.2em;
+			border: none;
+			border-radius: 20px;
+			background-color: #FF4081;
+			color: #FFFFFF;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		button:hover {
+			background-color: #FFC107;
+		}
+
+		#loadingIndicator {
+			font-size: 1.5em;
+			color: #FF4081;
+			margin-top: 20px;
+		}
+
+		#mealIdeasOutput {
+			margin-top: 20px;
+			font-size: 1.2em;
+			color: #388E3C;
+			background-color: #E8F5E9;
+			padding: 20px;
+			border-radius: 10px;
+			line-height: 1.5em;
+		}
+
+		footer {
+			margin-top: 40px;
+			color: #FFC107;
+			font-size: 1.2em;
+			border-top: 4px dashed #FF4081;
+			padding-top: 10px;
+		}
+		#mealIdeasOutput {
+		margin-top: 20px;
+		font-size: 1.2em;
+		color: #388E3C;
+		background-color: #E8F5E9;
+		padding: 20px;
+		border-radius: 10px;
+		line-height: 1.5em;
+		text-align: left; /* This will make the content left-aligned */
+			}
+
+
+	
+	</style>
+	
+</head>
+<body>
+    <h1>Generate Meal Ideas with What You Have!</h1>
+    <textarea id="ingredientsInput" placeholder="Enter the ingredients you have at home, separated by commas (e.g., tomatoes, chicken, rice)"></textarea>
+    <button onclick="generateMealIdeas()">Generate Meal Ideas</button>
+    <div id="loadingIndicator" style="display: none;">Generating meal ideas...</div>
+    <div id="mealIdeasOutput"></div>
+    <footer>Powered by Dr.Moose </footer>
+
+
+    <script>
+	
+    function generateMealIdeas() {
+        // 3. Input Validation
+        const ingredients = document.getElementById('ingredientsInput').value.trim();
+        if (!ingredients) {
+            alert('Please enter some ingredients.');
+            return;
+        }
+
+        // 4. API Request Preparation
+        const apiEndpoint = "https://api.openai.com/v1/chat/completions";
+        const requestBody = {
+            model: "gpt-3.5-turbo-16k",
+            messages: [
+                { role: "system", content: "You are a helpful assistant." },
+                { role: "user", content: `What meals can I make with ${ingredients}? Pick one and give me the receipt` }
+            ]
+        };
+
+        // 5. Waiting Indicator
+        document.getElementById('loadingIndicator').style.display = 'block';
+
+        // 6. API Call
+        fetch(apiEndpoint, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                // Placeholder for the API key - You can replace 'YOUR_API_KEY' with the actual key later.
+                "Authorization": "Bearer YOUR_API_KEY"
+            },
+            body: JSON.stringify(requestBody)
+        })
+        .then(response => response.json())
+        .then(data => {
+            // 7. Display Results
+            const mealIdeas = data.choices[0].message.content.trim();
+            document.getElementById('mealIdeasOutput').innerText = mealIdeas;
+
+            // Hide the waiting indicator
+            document.getElementById('loadingIndicator').style.display = 'none';
+        })
+        .catch(error => {
+            // 8. Error Handling
+            console.error('Error fetching meal ideas:', error);
+            alert('Failed to generate meal ideas. Please try again later.');
+
+            // Hide the waiting indicator
+            document.getElementById('loadingIndicator').style.display = 'none';
+        });
+    }
+</script>
+
+</body>
+</html>
