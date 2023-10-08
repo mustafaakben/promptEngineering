@@ -341,11 +341,16 @@ RESPONSE
 
 ### Example Ends ###
 
-Let's go step by step and first write the actions that you will take and then take the each actions.
+Let's go step by step and first write the actions that you will take and then take each action.
 ```
 
 **Prompt 3**
 ```
 Let’s make the style of the website with CSS. CSS should be funky and vibrant, showing the spirit of our website.
+```
+
+**Prompt 4**
+```
+Please now put everything, CSS, javaScript, and HTML, into a single HTML file.
 ```
 
