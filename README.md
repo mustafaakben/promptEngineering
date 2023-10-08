@@ -347,8 +347,5 @@ Let's go step by step and first write the actions that you will take and then ta
 **Prompt 3**
 ```
 Let’s make the style of the website with CSS. CSS should be funky and vibrant, showing the spirit of our website.
-<<<<<<< HEAD
 ```
-=======
-```
->>>>>>> 72056d70fd9a022a689242eb2b6eb52cbcdb6e7c
+
