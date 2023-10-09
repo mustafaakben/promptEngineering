@@ -125,10 +125,10 @@ Title: Love of My Life
 
 ## Prompt Method 1 - Zero-Shot Prompting
 
-Use it for simple task
+Use it for simple tasks.
 
 ```
-Classify the following text into three categories: neutral, negative or positive.
+Classify the following text into three categories: neutral, negative, or positive.
 
 Text:
 
@@ -140,7 +140,7 @@ Sentiment:
 ***
 ## Prompt Method 2 - Few-Shot Prompting
 
-Use it for complex problem
+Use it for complex problems.
 
 **A Bad Prompt**
 ```
@@ -167,7 +167,6 @@ xi xh p hjccn spn.  >>>  It is a sunny day.
 iwxh xh bn upkdgxit hwxgi.  >>>  This is my favorite shirt.
 iwtn pgt eapnxcv hdrrtg.  >>>  They are playing soccer.
 hwt xh epxcixcv p exrijgt.  >>>
-
 ```
 
 ***
@@ -179,7 +178,6 @@ Tell the machine to **show the explicit reasoning steps** to increase accuracy
 **A Bad Prompt**
 ```
 Just only write the answer to the questions with a number.
-
 
 Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3 tennis balls. How many tennis balls does he have now?
 Answer: 11
@@ -196,7 +194,6 @@ Add the key word, “**Let’s think step-by-step**” or “**Let’s take a de
 I went to the market and bought 10 apples. I gave 2 apples to the neighbor and 2 to the repairman. I then went and bought 5 more apples and ate 1. How many apples remain?
 
 Let's think step by step.
-
 ```
 
 ***
@@ -209,7 +206,7 @@ Let's think step by step.
 ```
 **Prompt 2-**
 ```
--Based on the second idea, please write a short plan to present the student’s life Dean.
+-Based on the second idea, please write a short plan to present the Student’s Life Dean.
 -Explain why this party would be very interesting for college students to the Dean.
 -Keep it simple and easy to read.
 -Make it one page long.
@@ -246,10 +243,8 @@ Summarize the meeting notes. | Summarize the meeting notes in a single paragraph
 **Prompt 1**
 ```
 Let's create a simple webpage that will generate meal ideas for the items that I have in my home.
-
 To create the meal ideas, we will use OpenAI's chatCompletion API.
-
-Please first write all specs in the bullet point format and wait for my next instruction.
+Please first write HTML, JavaScript, and CSS specs in bullet point format and wait for my next instruction.
 ```
 
 **Prompt 2**
@@ -261,9 +256,9 @@ The user will input from the user input text area, and we will feed the data fro
 
 Make sure that you show the return text with a line break, and when the user submits a request, they can see a waiting indicator.
 
-For waiting indicator, do not use GIF. Use only JavaScript.
+For the waiting indicator, do not use GIFs. Use only JavaScript.
 
-Finally, write the JavaScript code. To write the code, please use the example API from OpenAI below. I will add an API key later. This is a secure-prototype, not publically availble. Do not use node.js.
+Finally, write the JavaScript code. To write the code, please use the example API from OpenAI below. I will add an API key later. This is a secure prototype, not publically available. Do not use node.js.
 
 ### Example API Call and Response ###
 
@@ -351,6 +346,6 @@ Let’s make the style of the website with CSS. CSS should be funky and vibrant,
 
 **Prompt 4**
 ```
-Please now put everything, CSS, javaScript, and HTML, into a single HTML file.
+Please now put everything, CSS, JavaScript, and HTML, into a single HTML file. When you do so, please do NOT shorten the code, write full CSS, JavaScript, and HTML codes.
 ```
 
