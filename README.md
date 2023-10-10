@@ -348,7 +348,7 @@ Let's go step by step and and write HTML, CSS, and JavaScript all.
 
 **Prompt 4**
 ```
-1) Let’s make the style of the website with CSS.
+1) Let’s make the style of the website with CSS
 
 2) CSS should be funky and vibrant, showing the spirit of our website.
 
