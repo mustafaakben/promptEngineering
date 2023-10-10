@@ -209,7 +209,7 @@ Make the goals concrete and assign these goals to each of our group members. We 
 ```
 - Based on the party information above, please generate our party advertisement hands-out.
 - Keep the writing catchy and short, use some fun stuff.
-- After the hands-outs, create four different images by using a diverse set of artistic styles. Images should be creative and funny.
+- After the hands-outs, create four different image concept prompts for Dalle-3 by using a diverse set of artistic styles. Images should be creative and funny.
 ```
 
 ***
