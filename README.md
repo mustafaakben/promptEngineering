@@ -137,35 +137,22 @@ One of the best professors i've had at Elon, he is fantastic and clearly cares s
 Sentiment:
 ```
 
+**Task 1: Classification**
+1- Download the following file and classify the text into three categories: neutral, negative, or positive. 
+2- After classification, please put your answers on this online Form: [Link](https://forms.office.com/r/rzvwhMHUQR)
+
+
 ***
+
 ## Prompt Method 2 - Few-Shot Prompting
 
-Use it for complex problems.
+Few-shot learning can be used for complex problems.
 
-**A Bad Prompt**
+**Task 2: Please Decipher the following message with ChaptGPT (hint: Ceaser Cipher)**
+
+**A Prompt**
 ```
 Please decipher the following writing:
-hwt xh epxcixcv p exrijgt.  >>>
-```
-
-In the second stage, add the following content to improve accuracy.
-\
-\
-**A Good Prompt**
-```
-Please use the following context to decipher the text:  
-  
-iwt hjc xh hwxcxcv qgxvwian.  >>>  The sun is shining brightly.
-rpih pgt vgtpi etih.  >>>  Cats are great pets.
-x tcydn gtpsxcv qddzh.  >>>  I enjoy reading books.
-hwt eapnh iwt expcd qtpjixujaan.  >>>  She plays the piano beautifully.
-wt pit pc peeat udg ajcrw.  >>>  He ate an apple for lunch.
-wt xh epxcixcv  >>>  He is painting
-p exrijgt dc iwt lpaa.  >>>  A picture on the wall.
-lt lpazts id iwt epgz.  >>>  We walked to the park.
-xi xh p hjccn spn.  >>>  It is a sunny day.
-iwxh xh bn upkdgxit hwxgi.  >>>  This is my favorite shirt.
-iwtn pgt eapnxcv hdrrtg.  >>>  They are playing soccer.
 hwt xh epxcixcv p exrijgt.  >>>
 ```
 
@@ -197,7 +184,9 @@ Let's think step by step.
 ```
 
 ***
-**Let's generate a party plan!**
+
+**Task 3: Please Generate a Party Plan with ChatGPT Step-by-Step**
+
 
 **Prompt 1-**
 ```
@@ -236,6 +225,8 @@ Summarize the meeting notes. | Summarize the meeting notes in a single paragraph
 
 ***
 ## 5. Application of Prompt Engineering to Create a Web App
+
+**Task 4: Please Create a Web App with ChatGPT**
 
 ***
 **TEMP API:**
