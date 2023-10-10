@@ -244,7 +244,8 @@ Summarize the meeting notes. | Summarize the meeting notes in a single paragraph
 ```
 Let's create a simple webpage that will generate meal ideas for the items that I have in my home.
 To create the meal ideas, we will use OpenAI's chatCompletion API.
-Please first write HTML, JavaScript, and CSS specs in bullet point format and wait for my next instruction.
+Please first write simple specs in bullet point format and wait for my next instruction.
+Make sure that this app will be a simple single webpage.
 ```
 
 **Prompt 2**
@@ -252,13 +253,17 @@ Please first write HTML, JavaScript, and CSS specs in bullet point format and wa
 ```
 By using the above specs, please follow the following instructions.
 
-The user will input from the user input text area, and we will feed the data from this input to the API. After inputs, it will return API from OPEN AI.
+1) The user will input from the user input text area, and we will feed the data from this input to the API. After inputs, it will return API from OPEN AI.
 
-Make sure that you show the return text with a line break, and when the user submits a request, they can see a waiting indicator.
+2) Make sure that you show the return text with a line break, and when the user submits a request, they can see a waiting indicator. 
 
-For the waiting indicator, do not use GIFs. Use only JavaScript.
+3) For the waiting indicator, do not use GIFs. Use only JavaScript.
 
-Finally, write the JavaScript code. To write the code, please use the example API from OpenAI below. I will add an API key later. This is a secure prototype, not publically available. Do not use node.js.
+4) Important: Please also change the message prompt for the system from ""You are a helpful assistant." to "You will generate creative and unique meal ideas for the input ingredients given by the user. Just pick one and give me the recipe!"
+
+5) Write the JavaScript code. To write the code, please use the example API from OpenAI below. I will add an API key later. This is a secure prototype, not publically available. Do not use node.js.
+
+
 
 ### Example API Call and Response ###
 
@@ -336,16 +341,49 @@ RESPONSE
 
 ### Example Ends ###
 
-Let's go step by step and first write the actions that you will take and then take each action.
+Let's go step by step and and write HTML, CSS, and JavaScript all.
 ```
 
 **Prompt 3**
 ```
-Let’s make the style of the website with CSS. CSS should be funky and vibrant, showing the spirit of our website.
+1) Ensure that the output is shown in a new line break and left-centered.
+
+2) Ensure that the waiting indicator is shown when the user submits a request.
+
+3) Ensure that the user can submit a request from the user input text area, also with the enter/return key.
+
+4) Update all code without shortening or abbreviations to code.
 ```
 
 **Prompt 4**
 ```
-Please now put everything, CSS, JavaScript, and HTML, into a single HTML file. When you do so, please do NOT shorten the code, write full CSS, JavaScript, and HTML codes.
+1) Let’s make the style of the website with CSS.
+
+2) CSS should be funky and vibrant, showing the spirit of our website.
+
+3) Try to use some fun elements and animations.
 ```
 
+**Prompt 5**
+```
+1) Now put everything, CSS, JavaScript, and HTML, into a single HTML file.
+
+2) Do NOT shorten the code; write full CSS, JavaScript, and HTML codes.
+
+3) Ensure that you use OpenAI's chatCompletion API.
+```
+
+**Prompt 6**
+```
+Please debug and ensure that all codes are correct on a single HTML file without any abbreviations.
+```
+
+**Prompt 7: FOR MAC USERS**
+```
+For MAC users, please explain how they can run this webpage step-by-step with TextEdit.
+```
+
+**Prompt 7: FOR WINDOWS USERS**
+```
+For Windows users, please explain how they can run this webpage step-by-step with Notepad.
+```
