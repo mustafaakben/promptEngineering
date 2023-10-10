@@ -137,9 +137,9 @@ One of the best professors i've had at Elon, he is fantastic and clearly cares s
 Sentiment:
 ```
 
-**Task 1: Classification**
-1- Download the following file and classify the text into three categories: neutral, negative, or positive. 
-2- After classification, please put your answers on this online Form: [Link](https://forms.office.com/r/rzvwhMHUQR)
+## Task 1: Classification
+- Download the following file and classify the texts into three categories: neutral, negative, or positive. [LINK](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fmustafaakben%2FpromptEngineering%2Fmain%2Fmaterials%2Fsentiment.xlsx&wdOrigin=BROWSELINK)
+- After classification it with ChatGPT, please put your answers on this online Form: [Link](https://forms.office.com/r/rzvwhMHUQR)
 
 
 ***
@@ -148,7 +148,7 @@ Sentiment:
 
 Few-shot learning can be used for complex problems.
 
-**Task 2: Please Decipher the following message with ChaptGPT (hint: Ceaser Cipher)**
+## Task 2: Please Decipher the following message with ChaptGPT (hint: Ceaser Cipher)
 
 **A Prompt**
 ```
@@ -185,8 +185,7 @@ Let's think step by step.
 
 ***
 
-**Task 3: Please Generate a Party Plan with ChatGPT Step-by-Step**
-
+## Task 3: Please Generate a Party Plan with ChatGPT Step-by-Step
 
 **Prompt 1-**
 ```
@@ -226,7 +225,7 @@ Summarize the meeting notes. | Summarize the meeting notes in a single paragraph
 ***
 ## 5. Application of Prompt Engineering to Create a Web App
 
-**Task 4: Please Create a Web App with ChatGPT**
+## Task 4: Please Create a Web App with ChatGPT
 
 ***
 **TEMP API:**
