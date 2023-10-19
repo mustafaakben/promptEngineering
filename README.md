@@ -173,7 +173,7 @@ Q: I went to the market and bought 10 apples. I gave 2 apples to the neighbor an
 Answer: 
 ```
 
-Add the key word, “**Let’s think step-by-step**” or “**Let’s take a deep breath and think step-by-step**”
+Add the key word, “**Let’s think step-by-step**” or “**Let’s take a deep breath and think step-by-step**”, or **"let's do our action plan"**
 \
 \
 **Example Good Prompt**
