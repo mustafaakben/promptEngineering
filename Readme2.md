@@ -651,7 +651,7 @@ Now, using the above points and missing concepts, please improve your summary by
 \
 **Prompt 1:**
 ```
-- Please read the following pdf and tell me when you are ready.
+- Please read the attached file and tell me when you are ready.
 ```
 \
 **Prompt 2:**
