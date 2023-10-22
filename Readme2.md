@@ -67,7 +67,7 @@ Classify the following text into three categories: neutral, negative or positive
 - After classification it with ChatGPT, please put your answers on this online Form: [Link](https://forms.office.com/r/rzvwhMHUQR)
 
 <details>
-  <summary><b>See Solution</b></summary>
+  <summary><b>Example 1: SPOT Feedback Classification</b></summary>
 
  ```
 TASK: Classify the sentiment of the texts.
@@ -161,7 +161,7 @@ hwt xh epxcixcv p exrijgt. >>>
 </details>
 
 <details>
-<summary><b>Example 1: Writing from Outlines With Your Own Voice</b></summary>
+<summary><b>Example 2: Writing from Outlines With Your Own Voice</b></summary>
 
 ```
 Instruction: You are an expert in academic and scientific writing, furnished with the capacity of advanced logical reasoning and evidence-based deduction. You will help the users with whatever they ask you to perform by producing the elegantly crafted, superbly reasoned, logical, and error-free content that they need, supported with evidence in APA format. 
@@ -233,7 +233,7 @@ Paragraph 2:
 
 
 <details>
-<summary><b>Example 2: Teaching ChatGPT to Make Grammar Errors</b></summary>
+<summary><b>Example 3: Teaching ChatGPT to Make Grammar Errors</b></summary>
 
 ```
 # TASK: 
@@ -262,16 +262,33 @@ Please tell me the step-by-step process to achieve the task given to you above.
 </details>
 
 
-
 ***
 ***
 
 ## Prompt Method 3 - Chain-of-Thought Prompting
 
-Tell the machine to **show the explicit reasoning steps** to increase accuracy
-\
-\
-**A Bad Prompt**
+**When should you use Zero-Shot Prompting?**
+- Complex task
+- Hard promblems
+- Reasoning and logic are required
+- Examples: generate content involves multiples dimensions, long texts, and complex reasoning task, and so on.
+
+**How do you use it?**
+- Multiple instructions
+- Fine-tune your instructions
+- Use examples to illustrate your instructions
+- Use the keywords "step-by-step", "generate the action plans", or "generate your roadmap item-by-item"
+- Refer to previous prompts
+
+**\#\# Prompt Structure**
+- Instruction
+- Step 1
+- Step 2
+- Step 3
+- Step n
+- Task Content
+
+**Prompt 4: A Bad Prompt: Chain-of-Thought Prompting**
 ```
 Just only write the answer to the questions with a number.
 
@@ -282,44 +299,79 @@ Q: I went to the market and bought 10 apples. I gave 2 apples to the neighbor an
 Answer: 
 ```
 
-Add the key word, “**Let’s think step-by-step**” or “**Let’s take a deep breath and think step-by-step**”, or **"let's do our action plan"**
-\
-\
-**Example Good Prompt**
+**Prompt 5: A Good Prompt: Chain-of-Thought Prompting**
 ```
-I went to the market and bought 10 apples. I gave 2 apples to the neighbor and 2 to the repairman. I then went and bought 5 more apples and ate 1. How many apples remain?
-
+I went to the market and bought 10 apples. I gave 2 apples to the neighbor and 2 to the repairman. I then went and bought 5 more apples and ate 1. How many apples remain? 
 Let's think step by step.
 ```
-***
 
-## Task 3: Please Generate a Party Plan with ChatGPT Step-by-Step
+
+<details>
+<summary><b>Example 4: Writing a Case Study Exercise</b></summary>
 
 **Prompt 1-**
 ```
-- Let's come up with 3 creative and fun party ideas at Elon University, NC. Ideas should be unique and never done before.
-- Let’s take a deep breath and think step-by-step.
+Let’s write a step by step overview about team development stages by Bruce W. Tuckman. 
 ```
+\
 **Prompt 2-**
 ```
--Based on the second idea, please write a short plan to present the Student’s Life Dean.
--Explain why this party would be very interesting for college students to the Dean.
--Keep it simple and easy to read.
--Make it one page long.
-
+-Based on this information, please write a comprehensive case study about a recently established IT team for a new startup company. Please write this like a Harvard Business Review case study style.
+-Make the story interesting for Gen Z college students.
+-Don’t use bullet points or headings for the stages, make the writing cohesive and engaging.
 ```
-
+\
 **Prompt 3-**
 ```
-Make the goals concrete and assign these goals to each of our group members. We have three people, Mike, Jenny, Hyung.
+-Based on this case study, create 5 critical thinking questions for undergraduate business school students to answer in short essay form.
 ```
-**Prompt 4**
+\
+**Prompt 4-**
 ```
-- Based on the party information above, please generate our party advertisement hands-out.
-- Keep the writing catchy and short, use some fun stuff.
-- After the hands-outs, create four different image concept prompts for Dalle-3 by using a diverse set of artistic styles. Images should be creative and funny.
+-Please scaffold these questions for students with learning challenges.
 ```
+\
+**Prompt 5-**
+```
+-Create a grading rubric for these exercise.
+```
+</details>
 
+
+
+<details>
+<summary><b>Example 4: Activity Generator</b></summary>
+
+**Prompt 1-**
+```
+Please generate three class exercise ideas for the following topic: "Team Development Stages"
+```
+\
+**Prompt 2-**
+```
+Please create an interactive activity for students about benefits in Human Resource management at a fake company. Provide all materials needed for the activity.
+```
+\
+**Prompt 3-**
+```
+Can you provide a similar but more exciting activity? Provide all materials needed for the activity.
+```
+\
+**Prompt 4-**
+```
+Can you make the activity a puzzle solving one? Provide all materials needed for the activity.
+```
+\
+**Prompt 5-**
+```
+-Create a grading rubric for these exercise.
+```
+</details>
+
+
+
+
+***
 ***
 ## 4. Good, Bad, and Ugly Prompts
 
@@ -331,164 +383,11 @@ Write code to calculate the Fibonacci sequence. | Write a TypeScript function to
 Summarize the meeting notes. | Summarize the meeting notes in a single paragraph. Then write a markdown list of the speakers and each of their key points. Finally, list the next steps or action items suggested by the speakers, if any.
 
 ***
-## 5. Application of Prompt Engineering to Create a Web App
-
-## Task 4: Please Create a Web App with ChatGPT
+***
 
 ***
-**TEMP API:**
 *** 
-**Prompt 1**
-```
-Let's create a simple webpage that will generate meal ideas for the items that I have in my home.
-To create the meal ideas, we will use OpenAI's chatCompletion API.
-Please first write simple specs in bullet point format and wait for my next instruction.
-Make sure that this app will be a simple single webpage.
-```
-
-**Prompt 2**
-
-```
-By using the above specs, please follow the following instructions.
-
-1) The user will input from the user input text area, and we will feed the data from this input to the API. After inputs, it will return API from OPEN AI.
-
-2) Make sure that you show the return text with a line break, and when the user submits a request, they can see a waiting indicator. 
-
-3) For the waiting indicator, do not use GIFs. Use only JavaScript.
-
-4) Important: Please also change the message prompt for the system from ""You are a helpful assistant." to "You will generate creative and unique meal ideas for the input ingredients given by the user. Just pick one and give me the recipe!"
-
-5) Write the JavaScript code. To write the code, please use the example API from OpenAI below. I will add an API key later. This is a secure prototype, not publically available. Do not use node.js.
-
-
-
-### Example API Call and Response ###
-
-curl https://api.openai.com/v1/chat/completions \
-
-  -H "Content-Type: application/json" \
-
-  -H "Authorization: Bearer $OPENAI_API_KEY" \
-
-  -d '{
-
-    "model": "gpt-3.5-turbo-16k",
-
-    "messages": [
-
-      {
-
-        "role": "system",
-
-        "content": "You are a helpful assistant."
-
-      },
-
-      {
-
-        "role": "user",
-
-        "content": "Hello!"
-
-      }
-
-    ]
-
-  }'
-
-RESPONSE
-
-{
-
-  "id": "chatcmpl-123",
-
-  "object": "chat.completion",
-
-  "created": 1677652288,
-
-  "model": "gpt-3.5-turbo-0613",
-
-  "choices": [{
-
-    "index": 0,
-
-    "message": {
-
-      "role": "assistant",
-
-      "content": "\n\nHello there, how may I assist you today?",
-
-    },
-
-    "finish_reason": "stop"
-
-  }],
-
-  "usage": {
-
-    "prompt_tokens": 9,
-
-    "completion_tokens": 12,
-
-    "total_tokens": 21
-
-  }
-
-}
-
-### Example Ends ###
-
-Let's go step by step and and write HTML, CSS, and JavaScript all.
-```
-
-**Prompt 3**
-```
-1) Ensure that the output is shown in a new line break and left-centered.
-
-2) Ensure that the waiting indicator is shown when the user submits a request.
-
-3) Ensure that the user can submit a request from the user input text area, also with the enter/return key.
-
-4) Update all code without shortening or abbreviations to code.
-```
-
-**Prompt 4**
-```
-1) Let’s make the style of the website with CSS
-
-2) CSS should be funky and vibrant, showing the spirit of our website.
-
-3) Try to use some fun elements and animations.
-```
-
-**Prompt 5**
-```
-1) Now put everything, CSS, JavaScript, and HTML, into a single HTML file.
-
-2) Do NOT shorten the code; write full CSS, JavaScript, and HTML codes.
-
-3) Ensure that you use OpenAI's chatCompletion API.
-```
-
-**Prompt 6**
-```
-Please debug and ensure that all codes are correct on a single HTML file without any abbreviations.
-```
-
-**Prompt 7: FOR MAC USERS**
-```
-For MAC users, please explain how they can run this webpage step-by-step with TextEdit.
-```
-
-**Prompt 7: FOR WINDOWS USERS**
-```
-For Windows users, please explain how they can run this webpage step-by-step with Notepad.
-```
-
-
-*** 
-# Section 1: Understand Large Language Model
+# Section 4: Understand Large Language Model
 ### 1. Definition of Large Language Model
 A large language model like GPT-3.5 or GPT-4 utilizes a transformer architecture to predict the next word in a sequence by maximizing the probability of a word sequence:
 
