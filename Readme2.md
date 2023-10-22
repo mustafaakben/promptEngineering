@@ -7,7 +7,7 @@
 
 **Example Prompt**
 ```
-Can you list the three most likely effects of ChatGPT on the future of education and generate the concepts art for each.
+Create four photo examples of those textbooks for undergraduate courses, but make them really weird and funny.
 ```
 ***
 ***
@@ -115,7 +115,7 @@ Prediction1:
 
 **When should you use Zero-Shot Prompting?**
 - Complex task
-- Hard promblems
+- Hard problems
 - Examples: provide initial feedback based on rubric, develop exam questions, generate text similar to your own writing style, etc.
 
 **How do you use it?**
@@ -133,7 +133,7 @@ Prediction1:
 - Example n
 - Task Content
 
-**Prompt 3: Zero-Shot Example**
+**Prompt 3: Zero- versus Few-Shot Example**
 ```
 Please decipher the following writing:
 hwt xh epxcixcv p exrijgt.  >>>
@@ -181,7 +181,7 @@ Paragraph 1:
 Paragraph 2:
 - Describes the interactive influence of status (in)congruence and supervisor competence on perceptions of promotion system fairness.
 - Explains that high supervisor competence supports meritocracy and is likely to lead subordinates to view the promotion system as fair, regardless of status (in)congruence.
-- Contrasts this with the situation where the supervisor is seen as less competent, leading to a psychological predicament for subordinates who seek positive information about the system to rationalize the status quo.
+- Contrast this with the situation where the supervisor is seen as less competent, leading to a psychological predicament for subordinates who seek positive information about the system to rationalize the status quo.
 - Argues that subordinates may use status markers to justify a less competent supervisor's position in the hierarchy and perceive the promotion system as more fair, or at least less unfair.
 
 Paragraph 3:
@@ -207,6 +207,7 @@ Hypothesis 1: Supervisor competence and status (in)congruence will interact to p
 
 When you read the text above, say only "YES."
 ```
+\
 **Now, you teach your style. Let's ask it to write something for us.**
 ```
 ## Task: Craft the following academic and scientific paragraphs that demonstrate the highest logical reasoning and eloquent writing skills based on the points below. 
@@ -269,15 +270,15 @@ Please tell me the step-by-step process to achieve the task given to you above.
 
 **When should you use Zero-Shot Prompting?**
 - Complex task
-- Hard promblems
+- Hard problems
 - Reasoning and logic are required
-- Examples: generate content involves multiples dimensions, long texts, and complex reasoning task, and so on.
+- Examples: generate content involving multiple dimensions, long texts, complex reasoning tasks, and so on.
 
 **How do you use it?**
 - Multiple instructions
 - Fine-tune your instructions
 - Use examples to illustrate your instructions
-- Use the keywords "step-by-step", "generate the action plans", or "generate your roadmap item-by-item"
+- Use the keywords "step-by-step," "generate the action plans," or "generate your roadmap item-by-item"
 - Refer to previous prompts
 
 **\#\# Prompt Structure**
@@ -290,18 +291,21 @@ Please tell me the step-by-step process to achieve the task given to you above.
 
 **Prompt 4: A Bad Prompt: Chain-of-Thought Prompting**
 ```
-Just only write the answer to the questions with a number.
+- TASK: Just only write the answer to the questions with a number.
 
-Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3 tennis balls. How many tennis balls does he have now?
+Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can have 3 tennis balls. How many tennis balls does he have now?
 Answer: 11
 
 Q: I went to the market and bought 10 apples. I gave 2 apples to the neighbor and 2 to the repairman. I then went and bought 5 more apples and ate 1. How many apples remain?
-Answer: 
+Answer:   
+
+\
 ```
 
 **Prompt 5: A Good Prompt: Chain-of-Thought Prompting**
 ```
-I went to the market and bought 10 apples. I gave 2 apples to the neighbor and 2 to the repairman. I then went and bought 5 more apples and ate 1. How many apples remain? 
+Q: I went to the market and bought 10 apples. I gave 2 apples to the neighbor and 2 to the repairman. I then went and bought 5 more apples and ate 1. How many apples remain? 
+
 Let's think step by step.
 ```
 
@@ -311,19 +315,20 @@ Let's think step by step.
 
 **Prompt 1-**
 ```
-Let’s write a step by step overview about team development stages by Bruce W. Tuckman. 
+Let’s write a step-by-step overview of team development stages by Bruce W. Tuckman. 
 ```
 \
 **Prompt 2-**
 ```
--Based on this information, please write a comprehensive case study about a recently established IT team for a new startup company. Please write this like a Harvard Business Review case study style.
+-Based on this information, please write a comprehensive case study about a recently established IT team for a new startup company. 
+-Write this like a Harvard Business Review case study style.
 -Make the story interesting for Gen Z college students.
--Don’t use bullet points or headings for the stages, make the writing cohesive and engaging.
+-Don’t use bullet points or headings for the stages; make the writing cohesive and engaging.
 ```
 \
 **Prompt 3-**
 ```
--Based on this case study, create 5 critical thinking questions for undergraduate business school students to answer in short essay form.
+-Based on this case study, create five critical thinking questions for undergraduate business school students to answer in short essay form.
 ```
 \
 **Prompt 4-**
@@ -333,61 +338,363 @@ Let’s write a step by step overview about team development stages by Bruce W. 
 \
 **Prompt 5-**
 ```
--Create a grading rubric for these exercise.
+-Create a grading rubric for this exercise.
 ```
 </details>
 
 
 
 <details>
-<summary><b>Example 4: Activity Generator</b></summary>
+<summary><b>Example 5: Activity Generator</b></summary>
 
 **Prompt 1-**
 ```
-Please generate three class exercise ideas for the following topic: "Team Development Stages"
+Please generate three class exercise ideas for the following topic at the undergraduate level: "Work Design Characteristics from Hackman: Motivation."
 ```
 \
 **Prompt 2-**
 ```
-Please create an interactive activity for students about benefits in Human Resource management at a fake company. Provide all materials needed for the activity.
+I like the idea one. Please generate the exercise step-by-step and provide all materials needed for the activity.
 ```
 \
 **Prompt 3-**
 ```
-Can you provide a similar but more exciting activity? Provide all materials needed for the activity.
+Based on the previous answer, add interesting twists and engaging activities to make this exercise more exciting. Provide all materials needed for the activity.
 ```
 \
 **Prompt 4-**
 ```
-Can you make the activity a puzzle solving one? Provide all materials needed for the activity.
+Can you make the activity like a puzzle-solving exercise? Provide all materials needed for the activity.
 ```
 \
 **Prompt 5-**
 ```
--Create a grading rubric for these exercise.
+Create a grading rubric for this exercise and format it as a table.
+```
+</details>
+
+***
+***
+
+## Prompt Method 4 - Self-Consistency Prompting
+
+**When should you use Zero-Shot Prompting?**
+- Complex task
+- Accuracy is important
+- Examples: providing feedback on students' writing, assessing a work, retrieving information from a text, etc.
+
+**How do you use it?**
+- Multiple runs
+- Get the multiple outputs and compare them
+- Use it for accuracy
+
+**\#\# Prompt Structure**
+- Loop over `n` times
+    - Instruction
+    - Task Content
+    - Output Indicator
+
+<details>
+<summary><b>Example 6: Accurate Feedback</b></summary>
+
+\
+**Prompt Self-Consistency**
+```
+Please grade the student’s writing and provide constructive feedback for their work based on the following rubric.
+
+- Please first provide the grade in this format: "Your Grade X out of 100"
+
+Rubric for Organizational Culture Analysis Concept Essay Based on a Competing Value 
+
+Framework Model
+1. Introduction: 10 points
+     Clear presentation of the organization under study: 5 points
+     Explanation of the purpose and relevance of the analysis: 5 points
+2. Description of the Organization: 10 points
+     Detailed account of the organization's history, mission, vision, and values: 5 points
+     An overview of the organization's structure and primary activities: 5 points
+3. Competing Values Framework Understanding: 20 points
+     Clear understanding of the Competing Values Framework: 10 points
+     Accurate identification of the quadrant(s) most representative of the organization's culture: 10 points
+4. Application of Competing Values Framework: 20 points
+     Thorough application of the Competing Values Framework to the organization's culture: 10 points
+     In-depth analysis of how the identified quadrant(s) influence the organization's operation and performance: 10 points
+5. Observations and Evidence: 20 points
+     Detailed description of the observations made during the visit: 10 points
+     Evidence provided to substantiate observations: 10 points
+6. Critical Analysis: 20 points
+     Critical assessment of the organization's culture in relation to its mission, vision, and values: 10 points
+     Insightful analysis of the benefits and challenges of the organization's culture based on the Competing Values Framework: 10 points
+7. Conclusion: 10 points
+     Summarizing the main findings of the analysis: 5 points
+     Forward-thinking commentary or recommendations for the organization based on the analysis: 5 points
+8. Writing Quality: 10 points
+     Clarity, coherence, and organization of the essay: 5 points
+     Correct grammar, spelling, and punctuation: 5 points
+9. References and Citation: 10 points
+     Proper use of sources and citation style: 5 points
+     Sufficient number of sources utilized: 5 points 
+Total points: 100
+
+====
+Student’s Essay
+
+Analyzing Organizational Culture of Acorn Coffee at Elon University Based on the Competing Values Framework Model
+In the heart of Elon University, Acron Coffe presents it's self as an intriguing entity for culteral analysis. The establishment isn't just a cafe, it serves as a convergence point for the divers university community. Understanding the influens of Acorn Coffee's organizational culture on its performance and relevance within the Elon community is the objective of this analysis.
+Acorn Coffee, established over a deckade ago, stands with a mission to provide high-quality coffee and a welcomin environment for Elon University's students, faculty, and staff. It aim to facilitate academic discussion, promote social interaction, and foster community bonds within it's premises.
+Competing Values Framework Understanding
+The Competing Values Framework posits for distinct cultural models - Clan, Adhocracy, Market, and Hierarchy. These quadrants respectively represent collaboration, innovation, competitiveness, and control. Acorn Coffee, based on my observation, seems to fit the Clan and Adhocracy quadrants. Clan culture, because of its emphasis on internal focus and integration, which mirrors Acron's commitment to a warm, inclusive environment. Adhocracy due to it's focus on external orientation and differentiation, reflecting Acron's pursuit of innovation in it's products and services.
+It's evident that Acron's culture, shaped by the Clan and Adhocracy models, significantly influences there operations. Staff interactions are marked by collaboration, communication, and consensus, reflecting the Clan quadrant. New ideas for beverages, food items, or events are encouraged and implemented, an indication of the Adhocracy quadrant's influence.
+During my visit, the café had a friendly, relaxed atmosphere. Staff members greeted each customer warmly and appeared to be well-aquainted with many patrons. This observation supports the Clan quadrant assessment. In terms of Adhocracy, Acron Coffee frequently updates its menu with new beverage options, some of which are inspired by student recomendations. A staff member mentioned that they routinely organize community events like poetry readings and live music, providing additional evidence of a dynamic, innovative culture.
+The Clan culture aligns with Acron's mission to provide a welcoming environment for the Elon community. However, thdeir Adhocracy-focused approach might be at odds with their objective of maintaining consisstency in service and product quality.
+Furthermore, in their pursuit of innovation and inclusivity, Acron might be overlooking the need for formal protocols, as the staff appeared to lack a standard customer service script, creating inconsistent customer experiences. Acorn Coffee, within its Clan and Adhocracy cultural dimensions, has fostered a unique and dynamic environment. While this culture adds to Acorn's charm and distinctiveness, it might benefit from formal protocols to enhance consistency in customer service.
 ```
 </details>
 
 
+***
+***
+
+## Prompt Method 5 - Meta-Prompting
+
+**When should you use Zero-Shot Prompting?**
+- You do not know how to prompt
+
+**How do you use it?**
+- Ask questions to ChatGPT for generating your prompt
+- Give your prompt and ask it to make the prompt better
+- Ask it to provide more details and action plans
+
+<details>
+<summary><b>Example 7: Prompt Generator</b></summary>
+
+\
+**Self-Prompting**
+```
+You are a prompt generator. You will generate prompts for the task the user asks. 
+
+- Please now develop GPT3 prompts to generate the following output. 
+- Prompts that you develop should generate the OUTPUTS.
+- You will see diverse examples. Based on this example, find the common schema.
+- Develop GENERAL prompts for developing any other examples a user might give.
+- Use chain-of-thought prompting and provide some context in your prompt. 
+- Make the prompts bullet points.
+
+OUTPUT
+
+# Example 1
+USER: Emotional Intelligence
+
+AI: A good assessment activity is the temperament analysis. It was designed to help participants learn about temperament, understand their own temperament, and learn how to work with it.
+
+To get started, keep in mind that our temperament is made up of tendencies and feelings that are influenced by four factors or parameters:
+
+Genetic Inheritance
+Physical Attributes
+Life Experiences
+Environmental Conditions
+To give this activity a try, get started with the temperament questionnaire:
+
+Describe your temperament with three adjectives. Choose the ones that describe you best.
+Suggest three adjectives that others use to describe your temperament.
+Go through each of the adjectives identified in the above two questions and see if each one is because of (or how much each one is driven by) Genetic Inheritance, Physical Attributes, Life Experiences, or Environmental Conditions.
+How does each of the temperamental factors affect you on a personal level?
+How does each of the temperamental factors affect you on a leadership role level?
+Which of these factors do you want to change and why?
+Think about each of the questions in detail and try discussing with a friend to maximize the learning opportunity.
+
+See this exercise in more detail.
+
+
+# Example 2
+User: Team Building
+
+AI: Penny for your thoughts
+Team size: 5+ people
+
+Time: 2–3 minutes per person
+
+How to play: You’ll need a box full of pennies (or other coins) with years only as old as your youngest team member (not the time to brag about your 1937 collector’s penny). Ask every team member to draw a coin from the box and share a story, memory, or otherwise significant thing that happened to them that year. This can be anything from learning how to ride a bike to landing your first job.    
+
+Why this exercise is great: This is a fun twist on a stress-free and simple icebreaker that gives everyone the chance to share a personal story with their team. You can play multiple rounds if the stories are on the shorter side or let team members elaborate on their stories to gain deeper insight into their lives.
+
+Examples end.
+
+
+LIST OF THREE RELIABLE PROMPTS TO GENERATE OUTPUT
+```
+</details>
+
+<details>
+<summary><b>Example 8: Self-Critique and Self-Improvement</b></summary>
+
+\
+**Prompt 1: Plain Summary**
+```
+I am teaching an organizational behavior course at the undergraduate level. Please summarize the following text for my students and generate notes for the class.
+
+
+TOPIC
+Most content theories of motivation are based on the idea that an employee’s
+needs influence his or her motivation. Content theorists ask, “What are the different
+needs that activate motivation’s direction, intensity, and persistence?” Needs are defined
+as physiological or psychological deficiencies that arouse behavior. They can be
+strong or weak and are influenced by environmental factors. This tells you that human
+needs vary over time and place.
+Content theories include:
+• McGregor’s Theory X and Theory Y.
+• Maslow’s need hierarchy theory.
+• Acquired needs theory.
+• Self-determination theory.
+• Herzberg’s motivator-hygiene theory.
+McGregor’s Theory X and Theory Y
+Douglas McGregor outlined his theory in his book The Human Side of Enterprise.12 Drawing
+on his experience as a management consultant, McGregor formulated two sharply
+contrasting sets of assumptions about human nature. Theory X is a pessimistic view of
+employees: They dislike work, must be monitored, and can be motivated only with
+rewards and punishment (“carrots and sticks”). McGregor felt this was the typical
+perspective held by managers. To help them break with this negative tradition, McGregor
+formulated his own Theory Y. Theory Y is a modern and positive set of assumptions
+about people at work: They are self-engaged, committed, responsible, and creative.
+Consider the value of adopting a Theory Y approach toward people. One recent study
+demonstrated that employees and teams had higher performance when their managers
+displayed Theory Y behaviors. A second study uncovered higher levels of job satisfaction,
+organizational commitment, and organizational citizenship when managers engaged in
+Theory Y behaviors.13
+Maslow’s Need Hierarchy Theory:
+Five Levels of Needs
+In 1943, psychologist Abraham Maslow published his now-famous need hierarchy theory
+of motivation. Although the theory was based on his clinical observation of a few neurotic
+individuals, it has subsequently been used to explain the entire spectrum of human
+behavior.
+The need hierarchy theory states that motivation is a function of five basic
+needs: physiological, safety, love, esteem, and self-actualization. See Figure 5.2 for
+an explanation.
+The Five Levels Maslow proposed that the five needs are met sequentially and relate
+to each other in a “prepotent” hierarchy (see Figure 5.2). Prepotent means the current
+most-pressing need will be met before the next need becomes the most powerful or potent.
+In other words, Maslow believed human needs generally emerge in a predictable stair-step
+fashion. Thus when physiological needs have been met, safety needs emerge, and so on up
+the need hierarchy, one step at a time. Once a need has been satisfied, it activates the next
+higher need in the hierarchy. This process continues until the need for self-actualization
+has been activated.14
+Using Maslow’s Theory to Motivate Employees Although research does not
+clearly support its details, Maslow’s theory does offer practical lessons. It reminds us,
+for instance, that employees have needs beyond earning a paycheck. In addition to offering
+health care benefits, which fills a physiological need, Wisconsin–based consumer products
+company SC Johnson has an on-site employee concierge service to help employees with
+some of life’s chores. Concierges send packages and flowers, pick up groceries, shop for
+the best deals on car insurance, take employees’ cars in for service, and even stand in line
+for concert tickets.15
+This theory tells us that a “one style fits all” approach to motivation is unlikely to work.
+Studies show that different motivators are needed for employees working at small firms,
+whose owners may not have the money to spend on extensive benefits and perks. There are
+several strategies that will help keep employees motived at start-up or small businesses:
+• Offer flexibility when it comes to work hours;
+• Recognize and reward good performance; and
+• Involve employees in decision making.16
+A final lesson of Maslow’s theory is that satisfied needs lose their motivational potential.
+Therefore, managers are advised to motivate employees by devising programs or practices
+aimed at satisfying emerging or unmet needs.
+
+
+SUMMARY
+```
+
+\
+**Prompt 2: Critique**
+
+```
+Based on your previous answer, please identify three important improvement points and find whether you omitted any important points from the main text. 
+
+Provide outputs in the following format:
+
+# Improvement Points
+P1:
+P2:
+etc.
+
+# Important concept that are not in Notes but need to be included
+C1:
+C2:
+etc.
+```
+
+\
+**Prompt: Improve it**
+```
+Now, using the above points and missing concepts, please improve your summary by rewriting it.
+```
+
+</details>
+
+***
+***
+## Prompt Method 6 - Advance Application
+
+**When should you use Zero-Shot Prompting?**
+- Almost for everything
+- Cost is not a concern.
+
+**How do you use it?**
+- Generate images
+- Analyze data
+- Use it with plugins
+- Use it with other tools
+- Use it with API
+
+<details>
+<summary><b>Example 9: Moodle Quiz Generator</b></summary>
+
+\
+**Quiz Generator with Advance Analysis**
+\
+**Prompt 1:**
+```
+- Please read the following pdf and tell me when you are ready.
+```
+\
+**Prompt 2:**
+```
+- Based on the text you extract from the pdf, please generate well-crafted, logical, challenging quiz questions in multiple-choice format. 
+- Report the correct answer after the question. 
+- Focus on the main content; do not focus on the learning objectives parts.
+```
+\
+**Prompt 3:**
+```
+- Write and generate a Word document for these questions.
+```
+\
+**Prompt 4:**
+```
+- Generate a Moodle GIFT for these questions and give me the link.
+```
+
+</details>
+
 
 
 ***
 ***
-## 4. Good, Bad, and Ugly Prompts
 
- Worse | Better | 
- |--------|-------| 
-How do I add numbers in Excel? | How do I add up a row of dollar amounts in Excel? I want to do this automatically for a whole sheet of rows with all the totals ending up on the right in a column called "Total".
-Who’s president? | Who was the president of Mexico in 2021, and how frequently are elections held?
-Write code to calculate the Fibonacci sequence. | Write a TypeScript function to efficiently calculate the Fibonacci sequence. Comment the code liberally to explain what each piece does and why it's written that way.
-Summarize the meeting notes. | Summarize the meeting notes in a single paragraph. Then write a markdown list of the speakers and each of their key points. Finally, list the next steps or action items suggested by the speakers, if any.
 
-***
-***
+
+
+## 4. The Good, The Bad, and The Ugly Prompts
+
+| The Good                                                                                                              | The Bad                                 | The Ugly                                               |
+|-----------------------------------------------------------------------------------------------------------------------|-----------------------------------------|---------------------------------------------------------|
+| How do I add up a row of dollar amounts in Excel? I want to do this automatically for a whole sheet of rows with all the totals ending up on the right in a column called "Total". | How do I add numbers in Excel?          | How can I mess with the Excel data to get a raise?      |
+| Who was the president of Mexico in 2021, and how frequently are elections held?                                        | Who’s president?                        | Who’s the president of the 5th grade class at Oak School?|
+| Write a TypeScript function to efficiently calculate the Fibonacci sequence. Comment the code liberally to explain what each piece does and why it's written that way. | Write code to calculate the Fibonacci sequence. | Can you scribble something that looks like code?       |
+| Summarize the meeting notes in a single paragraph. Then write a markdown list of the speakers and each of their key points. Finally, list the next steps or action items suggested by the speakers, if any. | Summarize the meeting notes.            | What's the color of the pen used in the meeting notes? |
+
+
 
 ***
 *** 
-# Section 4: Understand Large Language Model
+# Section 3: Understand Large Language Model
 ### 1. Definition of Large Language Model
 A large language model like GPT-3.5 or GPT-4 utilizes a transformer architecture to predict the next word in a sequence by maximizing the probability of a word sequence:
 
