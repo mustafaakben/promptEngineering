@@ -44,6 +44,7 @@ Title: Love of My Life
  
 **When should you use Zero-Shot Prompting?**
 - Simple tasks
+- Speed is important.
 - Well-defined problems such as classifying students' SPOT comments, identifying simple patterns in your data, etc.
 
 **How do you use it?**
@@ -116,6 +117,7 @@ Prediction1:
 **When should you use Zero-Shot Prompting?**
 - Complex task
 - Hard problems
+- Similarity is important.
 - Examples: provide initial feedback based on rubric, develop exam questions, generate text similar to your own writing style, etc.
 
 **How do you use it?**
@@ -271,7 +273,7 @@ Please tell me the step-by-step process to achieve the task given to you above.
 **When should you use Zero-Shot Prompting?**
 - Complex task
 - Hard problems
-- Reasoning and logic are required
+- Reasoning and logic are important.
 - Examples: generate content involving multiple dimensions, long texts, complex reasoning tasks, and so on.
 
 **How do you use it?**
@@ -380,7 +382,7 @@ Create a grading rubric for this exercise and format it as a table.
 
 **When should you use Zero-Shot Prompting?**
 - Complex task
-- Accuracy is important
+- Accuracy is important.
 - Examples: providing feedback on students' writing, assessing a work, retrieving information from a text, etc.
 
 **How do you use it?**
@@ -459,6 +461,7 @@ Furthermore, in their pursuit of innovation and inclusivity, Acron might be over
 
 **When should you use Zero-Shot Prompting?**
 - You do not know how to prompt
+- Creativity and Diversity in prompt are important.
 
 **How do you use it?**
 - Ask questions to ChatGPT for generating your prompt
@@ -635,6 +638,7 @@ Now, using the above points and missing concepts, please improve your summary by
 **When should you use Zero-Shot Prompting?**
 - Almost for everything
 - Cost is not a concern.
+- You do not like `coding`.
 
 **How do you use it?**
 - Generate images
@@ -669,6 +673,16 @@ Now, using the above points and missing concepts, please improve your summary by
 **Prompt 4:**
 ```
 - Generate a Moodle GIFT for these questions and give me the link.
+
+# Example Formatting 
+
+::Question 1::Who is buried in Grant's tomb in New York City? {
+=Grant
+~No one
+~Napoleon
+~Churchill
+~Mother Teresa
+}
 ```
 
 </details>
